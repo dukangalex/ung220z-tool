@@ -1,6 +1,6 @@
 # CREDITS
 
-本仓库（angela-onu，中文别名「问猫」；自有化前的 fork 名为 ung220z-tool）
+本仓库（angela-onu，中文别名「陆吾」；自有化前的 fork 名为 ung220z-tool）
 自有化自上游开源项目，原始出处与各部分来源如实记录如下。
 许可证为 MIT，原文见 [LICENSE](LICENSE)（Copyright (c) 2026 Hut-hzf），保持不变。
 
