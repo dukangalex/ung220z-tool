@@ -179,6 +179,17 @@ http://<光猫IP>/getpage.gch?pid=1002&nextpage=tele_sec_tserver_t.gch
 
 ## 修复记录
 
+### 自有化基线（2026-11-26）
+
+本仓库自有化自上游 Hut-hzf/ung220z-tool（MIT），出处与致谢见
+[CREDITS.md](CREDITS.md)。基线复测（无真机，仅本地冒烟）修复 2 处缺陷，
+完整记录见 [docs/BASELINE.md](docs/BASELINE.md)：
+
+| 问题 | 影响 | 修复 |
+|---|---|---|
+| `main()` 给 `enable_telnet()` 传 `timeout` 参数，但函数签名没有 | 主流程一进开启 Telnet 就 TypeError 退出，对任何设备都跑不通 | 函数增加 `timeout=8` 参数并透传给 `http_get` |
+| `ung220z.py` 缺 `import base64` | `WebSession.login()` 抛错被宽泛异常吞掉，Web 侧侦察（第 ④ 步）静默失效 | 头部补 `import base64` |
+
 ### v1.2
 
 | 问题 | 修复 |
